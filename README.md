@@ -1,16 +1,7 @@
 # superboy
 
-A new Flutter project.
+Nosso aplicativo é um reconhecedor de voz em Flutter, com foco em acessibilidade para pessoas com deficiência física, visual e auditiva. Ele oferece suporte a tecnologias de acessibilidade, como controles de voz e dispositivos de assistência.
 
-## Getting Started
+O propósito do nosso aplicativo é permitir que usuários com deficiências possam interagir com seus dispositivos móveis por meio da fala, tornando o uso do aplicativo mais fácil e intuitivo. Além disso, nosso aplicativo tem um grande potencial para beneficiar outras pessoas, como idosos ou pessoas que estão temporariamente impossibilitadas de usar as mãos.
 
-This project is a starting point for a Flutter application.
-
-A few resources to get you started if this is your first Flutter project:
-
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
-
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+Em resumo, nosso aplicativo tem como objetivo fornecer uma solução acessível e inclusiva para a interação com dispositivos móveis, permitindo que todos possam desfrutar das tecnologias móveis modernas, independentemente de suas habilidades físicas ou sensoriais.
