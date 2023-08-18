@@ -13,6 +13,8 @@ import 'package:superboy/main.dart';
 void main() {
   testWidgets('Counter increments smoke test', (WidgetTester tester) async {
     // Build our app and trigger a frame.
+// [MermaidChart: bab9ce26-39c1-4fa6-9efd-ff170ce3cb58]
+// [MermaidChart: bab9ce26-39c1-4fa6-9efd-ff170ce3cb58]
     await tester.pumpWidget(MyApp());
 
     // Verify that our counter starts at 0.
