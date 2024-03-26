@@ -1,3 +1,4 @@
+import 'package:flutter/foundation.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
 
 class SpeechRecognitionService {
@@ -8,6 +9,8 @@ class SpeechRecognitionService {
     _speech = stt.SpeechToText();
   }
 
+  void Function(String command)? onCommand;
+
   bool get isListening => _isListening;
 
   void start() async {
@@ -15,9 +18,15 @@ class SpeechRecognitionService {
       _isListening = true;
       _speech.listen(
         onResult: (result) {
-          // O texto reconhecido é retornado no parâmetro result
           String text = result.recognizedWords;
-          print(text);
+          if (kDebugMode) {
+            print(text);
+          }
+          if (text.contains("abrir configurações")) {
+            onCommand?.call("abrirConfiguracoes");
+          } else if (text.contains("voltar")) {
+            onCommand?.call("voltar");
+          }
         },
         listenFor: const Duration(seconds: 30),
       );

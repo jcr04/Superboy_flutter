@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:speech_to_text/speech_to_text.dart' as stt;
-// [MermaidChart: bab9ce26-39c1-4fa6-9efd-ff170ce3cb58]
+import 'package:flutter_tts/flutter_tts.dart';
 
 class MyHomePage extends StatefulWidget {
   const MyHomePage({Key? key, required this.title}) : super(key: key);
@@ -14,6 +14,7 @@ class MyHomePage extends StatefulWidget {
 class _MyHomePageState extends State<MyHomePage> {
   final stt.SpeechToText _speech = stt.SpeechToText();
   bool _isListening = false;
+  final FlutterTts _flutterTts = FlutterTts();
   String _text = 'Pressione o botão para começar a falar';
 
   Future<void> _listen() async {
@@ -26,12 +27,21 @@ class _MyHomePageState extends State<MyHomePage> {
       if (available) {
         setState(() => _isListening = true);
         _speech.listen(
-          onResult: (val) => setState(() => _text = val.recognizedWords),
+          onResult: (val) => setState(() {
+            _text = val.recognizedWords;
+            _speak("Você disse: $_text");
+          }),
         );
       }
     } else {
       setState(() => _isListening = false);
       _speech.stop();
+    }
+  }
+
+  Future _speak(String text) async {
+    if (text.isNotEmpty) {
+      await _flutterTts.speak(text);
     }
   }
 
